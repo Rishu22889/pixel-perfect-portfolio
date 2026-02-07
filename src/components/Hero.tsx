@@ -102,7 +102,7 @@ export const Hero = () => {
               <div className="w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden gradient-border glow-effect">
                 <div className="class-wrapper w-full h-full bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center">
                   <img
-                  src="profile.jpeg"
+                  src="/profile.jpeg"
                   alt="Risu Raj"
                   className="zoom-img w-full h-full object-cover"
                 />
