@@ -4,25 +4,26 @@ import { useScrollReveal } from '@/hooks/useScrollReveal';
 const highlights = [
   {
     icon: Code,
-    title: 'Clean Code',
-    description: 'Writing maintainable, scalable code following best practices',
-  },
-  {
-    icon: Palette,
-    title: 'Design Eye',
-    description: 'Creating visually appealing and intuitive user interfaces',
+    title: 'Strong Fundamentals',
+    description: 'Solid foundations in data structures, algorithms, and core programming concepts',
   },
   {
     icon: Zap,
-    title: 'Performance',
-    description: 'Building fast, optimized applications for the best UX',
+    title: 'Applied Machine Learning',
+    description: 'Building and deploying ML models with a focus on real-world use cases and performance',
+  },
+  {
+    icon: Palette,
+    title: 'End-to-End Projects',
+    description: 'Taking ideas from data preprocessing and modeling to complete web applications',
   },
   {
     icon: Users,
-    title: 'Collaboration',
-    description: 'Working effectively in agile teams and with stakeholders',
+    title: 'Consistent Learner',
+    description: 'Actively improving through competitive programming, projects, and certifications',
   },
 ];
+
 
 export const About = () => {
   const { ref, isVisible } = useScrollReveal();
@@ -44,32 +45,28 @@ export const About = () => {
             {/* About Text */}
             <div className="space-y-6">
               <p className="text-lg text-muted-foreground leading-relaxed">
-                I'm a full-stack developer with 5+ years of experience building web applications
-                that solve real-world problems. My journey started with curiosity about how
-                websites work, and it evolved into a passion for creating seamless digital experiences.
+                I’m a B.Tech student at IIT ISM Dhanbad focused on building systems where machine learning meets production software. I enjoy shipping end-to-end products — from data pipelines and models to responsive UIs and reliable deployments. My work emphasizes reproducibility, scale, and measurable impact.
               </p>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                I specialize in modern JavaScript frameworks, cloud technologies, and creating
-                accessible, performant applications. When I'm not coding, you'll find me
-                exploring new technologies, contributing to open-source, or mentoring aspiring developers.
-              </p>
-              <p className="text-lg text-muted-foreground leading-relaxed">
-                I believe in continuous learning and pushing the boundaries of what's possible
-                with technology. Let's build something amazing together.
-              </p>
+              <ul>
+    <li>Strong foundations in DSA, algorithms, and system thinking</li>
+    <li>Hands-on experience deploying ML models as web applications</li>
+    <li>Comfortable with both backend logic and frontend UX</li>
+  </ul>
+                 </p>
 
               <div className="flex flex-wrap gap-4 pt-4">
                 <div className="glass-card px-4 py-2 rounded-full">
-                  <span className="text-primary font-medium">5+</span>
-                  <span className="text-muted-foreground ml-2">Years Experience</span>
+                  <span className="text-primary font-medium">2nd</span>
+                  <span className="text-muted-foreground ml-2">Year Student</span>
                 </div>
                 <div className="glass-card px-4 py-2 rounded-full">
-                  <span className="text-primary font-medium">50+</span>
+                  <span className="text-primary font-medium">5+</span>
                   <span className="text-muted-foreground ml-2">Projects Completed</span>
                 </div>
                 <div className="glass-card px-4 py-2 rounded-full">
-                  <span className="text-primary font-medium">20+</span>
-                  <span className="text-muted-foreground ml-2">Happy Clients</span>
+                  <span className="text-primary font-medium">1200+</span>
+                  <span className="text-muted-foreground ml-2">Codeforces Rating</span>
                 </div>
               </div>
             </div>

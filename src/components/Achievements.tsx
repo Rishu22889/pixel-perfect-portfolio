@@ -4,41 +4,48 @@ import { Award, Trophy, Star, Medal } from 'lucide-react';
 const achievements = [
   {
     icon: Trophy,
-    title: 'Hackathon Winner',
-    organization: 'TechCrunch Disrupt 2023',
-    description: 'First place for building an AI-powered accessibility tool in 48 hours.',
+    title: 'Hackathon Participant',
+    organization: 'AI Hackathons & Hackfest',
+    description:
+      'Participated in multiple AI-focused hackathons and Hackfest events, working on real-world problem statements under time constraints.',
   },
   {
     icon: Award,
-    title: 'AWS Solutions Architect',
-    organization: 'Amazon Web Services',
-    description: 'Professional certification for designing distributed systems on AWS.',
-  },
-  {
-    icon: Star,
-    title: 'Open Source Contributor',
-    organization: 'React Ecosystem',
-    description: 'Top 100 contributor to popular React libraries with 500+ commits.',
+    title: 'Machine Learning Specialization',
+    organization: 'Coursera',
+    description:
+      'Completed a comprehensive ML specialization covering supervised learning, unsupervised learning, and model evaluation.',
   },
   {
     icon: Medal,
-    title: 'Google Cloud Professional',
-    organization: 'Google Cloud Platform',
-    description: 'Certified Cloud Developer with expertise in GCP services.',
+    title: 'AI Engineer Certification',
+    organization: 'Simplilearn',
+    description:
+      'Certified AI Engineer with hands-on exposure to machine learning workflows, model building, and deployment concepts.',
   },
   {
     icon: Award,
-    title: 'Meta Frontend Developer',
-    organization: 'Meta (Coursera)',
-    description: 'Professional certificate in advanced React and frontend development.',
+    title: 'Deep Learning Certificate',
+    organization: 'Coursera',
+    description:
+      'Completed deep learning coursework covering neural networks, optimization, and practical model training concepts.',
+  },
+  {
+    icon: Star,
+    title: 'Competitive Programming',
+    organization: 'Codeforces & LeetCode',
+    description:
+      'Achieved 1200+ Codeforces rating and solved 100+ LeetCode problems, strengthening algorithmic thinking and problem-solving skills.',
   },
   {
     icon: Trophy,
-    title: 'Best Innovation Award',
-    organization: 'TechCorp Annual Awards',
-    description: 'Recognized for developing an internal tool that saved 200+ hours monthly.',
+    title: 'Project-Based Learning',
+    organization: 'Personal & Academic Projects',
+    description:
+      'Built multiple end-to-end ML and web projects including placement prediction, spam classification, and automation tools.',
   },
 ];
+
 
 export const Achievements = () => {
   const { ref, isVisible } = useScrollReveal();
@@ -52,8 +59,9 @@ export const Achievements = () => {
               Achievements & <span className="gradient-text">Certifications</span>
             </h2>
             <p className="section-subheading mx-auto">
-              Recognition and credentials that validate my expertise
+              Certifications, competitions, and milestones from my learning journey
             </p>
+
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">

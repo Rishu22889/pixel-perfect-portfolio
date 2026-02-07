@@ -2,36 +2,37 @@ import { useScrollReveal } from '@/hooks/useScrollReveal';
 
 const skillCategories = [
   {
-    title: 'Frontend',
+    title: 'Machine Learning & AI',
     skills: [
-      { name: 'React', level: 95 },
-      { name: 'TypeScript', level: 90 },
-      { name: 'Next.js', level: 88 },
-      { name: 'Tailwind CSS', level: 92 },
-      { name: 'Vue.js', level: 75 },
+      { name: 'Python', level: 90 },
+      { name: 'Scikit-learn', level: 88 },
+      { name: 'NumPy', level: 90 },
+      { name: 'Pandas', level: 85 },
+      { name: 'Model Evaluation & Tuning', level: 82 },
     ],
   },
   {
-    title: 'Backend',
+    title: 'Algorithms & Problem Solving',
     skills: [
-      { name: 'Node.js', level: 90 },
-      { name: 'Python', level: 85 },
-      { name: 'PostgreSQL', level: 88 },
-      { name: 'GraphQL', level: 82 },
-      { name: 'REST APIs', level: 95 },
+      { name: 'Data Structures & Algorithms', level: 88 },
+      { name: 'Competitive Programming', level: 85 },
+      { name: 'Codeforces (1200+)', level: 80 },
+      { name: 'LeetCode (100+)', level: 78 },
+      { name: 'Algorithmic Thinking', level: 86 },
     ],
   },
   {
-    title: 'Tools & Others',
+    title: 'Web, Backend & Deployment',
     skills: [
-      { name: 'Git', level: 92 },
-      { name: 'Docker', level: 80 },
-      { name: 'AWS', level: 78 },
-      { name: 'Figma', level: 85 },
-      { name: 'CI/CD', level: 82 },
+      { name: 'Flask / FastAPI', level: 85 },
+      { name: 'REST APIs', level: 88 },
+      { name: 'React', level: 75 },
+      { name: 'Git & GitHub', level: 90 },
+      { name: 'Docker & Deployment', level: 78 },
     ],
   },
 ];
+
 
 export const Skills = () => {
   const { ref, isVisible } = useScrollReveal();
@@ -45,8 +46,7 @@ export const Skills = () => {
               Technical <span className="gradient-text">Skills</span>
             </h2>
             <p className="section-subheading mx-auto">
-              A comprehensive toolkit for building modern web applications
-            </p>
+              A practical toolkit for building and deploying ML-powered applications            </p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
@@ -87,7 +87,7 @@ export const Skills = () => {
 
           {/* Tech Icons */}
           <div className="mt-16 flex flex-wrap justify-center gap-6">
-            {['⚛️', '📘', '🟢', '🐍', '🐳', '☁️', '🎨', '⚡'].map((icon, index) => (
+            {['🐍', '🤖', '📊', '🧠', '⚙️', '🧮', '🐳', '⚡'].map((icon, index) => (
               <div
                 key={index}
                 className={`w-16 h-16 glass-card rounded-xl flex items-center justify-center text-2xl transition-all duration-300 hover:scale-110 hover:glow-effect ${

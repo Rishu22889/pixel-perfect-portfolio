@@ -2,18 +2,42 @@ import { useState } from 'react';
 import { useScrollReveal } from '@/hooks/useScrollReveal';
 import { Mail, MapPin, Phone, Send, Github, Linkedin, Twitter } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
+import emailjs from '@emailjs/browser';
 
 const contactInfo = [
-  { icon: Mail, label: 'Email', value: 'alex@example.com', href: 'mailto:alex@example.com' },
-  { icon: MapPin, label: 'Location', value: 'San Francisco, CA', href: '#' },
-  { icon: Phone, label: 'Phone', value: '+1 (555) 123-4567', href: 'tel:+15551234567' },
+  {
+    icon: Mail,
+    label: 'Email',
+    value: 'rk1258106@gmail.com',
+    href: 'mailto:rk1258106@gmail.com',
+  },
+  {
+    icon: MapPin,
+    label: 'Location',
+    value: 'Dhanbad, Jharkhand, India',
+    href: 'https://www.google.com/maps/place/Dhanbad,+Jharkhand,+India',
+  },
+  {
+    icon: Phone,
+    label: 'Phone',
+    value: 'Available on request',
+  },
 ];
 
+
 const socialLinks = [
-  { icon: Github, label: 'GitHub', href: 'https://github.com' },
-  { icon: Linkedin, label: 'LinkedIn', href: 'https://linkedin.com' },
-  { icon: Twitter, label: 'Twitter', href: 'https://twitter.com' },
+  {
+    icon: Github,
+    label: 'GitHub',
+    href: 'https://github.com/Rishu22889',
+  },
+  {
+    icon: Linkedin,
+    label: 'LinkedIn',
+    href: 'https://www.linkedin.com/in/risuraj/',
+  },
 ];
+
 
 export const Contact = () => {
   const { ref, isVisible } = useScrollReveal();
@@ -47,24 +71,42 @@ export const Contact = () => {
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    
-    if (!validateForm()) return;
+const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault();
 
-    setIsSubmitting(true);
-    
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    
+  if (!validateForm()) return;
+
+  setIsSubmitting(true);
+
+  try {
+    await emailjs.send(
+      'service_swh1fcd',
+      'template_6xgff0s',
+      {
+        from_name: formData.name,
+        reply_to: formData.email,
+        message: formData.message,
+      },
+      'wJHOl68yG7DoO2wM0'
+    );
+
     toast({
       title: 'Message sent!',
-      description: "Thank you for reaching out. I'll get back to you soon.",
+      description: "Thanks for reaching out. I'll get back to you soon.",
     });
-    
+
     setFormData({ name: '', email: '', message: '' });
-    setIsSubmitting(false);
-  };
+  } catch (error) {
+    toast({
+      title: 'Failed to send message',
+      description: 'Please try again later or email me directly.',
+      variant: 'destructive',
+    });
+  }
+
+  setIsSubmitting(false);
+};
+
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -83,8 +125,9 @@ export const Contact = () => {
               Get In <span className="gradient-text">Touch</span>
             </h2>
             <p className="section-subheading mx-auto">
-              Have a project in mind? Let's work together to bring your ideas to life
-            </p>
+  Interested in internships, collaborations, or ML projects? Let’s connect.
+</p>
+
           </div>
 
           <div className="grid lg:grid-cols-2 gap-12 max-w-5xl mx-auto">
@@ -205,6 +248,7 @@ export const Contact = () => {
                 </button>
               </div>
             </form>
+            
           </div>
         </div>
       </div>

@@ -2,11 +2,12 @@ import { ArrowDown, Github, Linkedin, Mail } from 'lucide-react';
 import { useTypingEffect } from '@/hooks/useTypingEffect';
 
 const roles = [
-  'Full Stack Developer',
-  'UI/UX Designer',
-  'Problem Solver',
-  'Tech Enthusiast',
+  'an IITian building ML systems',
+  'an Aspiring AI/ML Engineer',
+  'a Data Science Enthusiast',
+  'a Competitive Programmer',
 ];
+
 
 export const Hero = () => {
   const typingText = useTypingEffect(roles, 100, 50, 2000);
@@ -34,11 +35,11 @@ export const Hero = () => {
               Hello, I'm
             </p>
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-display font-bold mb-4 animate-fade-up delay-100">
-              Alex <span className="gradient-text">Johnson</span>
+              Risu <span className="gradient-text">Raj</span>
             </h1>
             <div className="h-12 md:h-14 mb-6 animate-fade-up delay-200">
               <span className="text-xl md:text-2xl text-muted-foreground">
-                I'm a{' '}
+                I'm {' '}
                 <span className="text-foreground font-medium">
                   {typingText}
                   <span className="animate-pulse">|</span>
@@ -46,9 +47,8 @@ export const Hero = () => {
               </span>
             </div>
             <p className="text-muted-foreground text-lg max-w-xl mx-auto lg:mx-0 mb-8 animate-fade-up delay-300">
-              Crafting beautiful, performant, and user-centric digital experiences.
-              Turning complex problems into elegant solutions with clean code.
-            </p>
+              Building production-ready web apps powered by clean code and practical ML.
+              </p>
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8 animate-fade-up delay-400">
@@ -69,7 +69,7 @@ export const Hero = () => {
             {/* Social Links */}
             <div className="flex gap-4 justify-center lg:justify-start animate-fade-up delay-500">
               <a
-                href="https://github.com"
+                href="https://github.com/Rishu22889"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-3 rounded-lg bg-secondary hover:bg-muted hover:text-primary transition-all duration-300"
@@ -78,7 +78,7 @@ export const Hero = () => {
                 <Github size={20} />
               </a>
               <a
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/in/risuraj/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-3 rounded-lg bg-secondary hover:bg-muted hover:text-primary transition-all duration-300"
@@ -87,7 +87,7 @@ export const Hero = () => {
                 <Linkedin size={20} />
               </a>
               <a
-                href="mailto:alex@example.com"
+                href="mailto:rk1258106@gmail.com"
                 className="p-3 rounded-lg bg-secondary hover:bg-muted hover:text-primary transition-all duration-300"
                 aria-label="Email"
               >
@@ -100,12 +100,16 @@ export const Hero = () => {
           <div className="flex-shrink-0 animate-scale-in delay-200">
             <div className="relative">
               <div className="w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden gradient-border glow-effect">
-                <div className="w-full h-full bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center">
-                  <span className="text-8xl">👨‍💻</span>
+                <div className="class-wrapper w-full h-full bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center">
+                  <img
+                  src="./public/profile.jpeg"
+                  alt="Risu Raj"
+                  className="zoom-img w-full h-full object-cover"
+                />
                 </div>
               </div>
               <div className="absolute -bottom-4 -right-4 glass-card px-4 py-2 rounded-full animate-pulse-glow">
-                <span className="text-sm font-medium">Available for hire</span>
+                <span className="text-sm font-medium">Always learning. Always building.</span>
               </div>
             </div>
           </div>

@@ -10,7 +10,7 @@ export const Footer = () => {
       <div className="container mx-auto px-6">
         <div className="flex flex-col md:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-2 text-muted-foreground">
-            <span>© 2024 Alex Johnson. Made with</span>
+            <span>© 2024 Risu Raj. Made with</span>
             <Heart size={16} className="text-destructive fill-destructive" />
             <span>and lots of coffee.</span>
           </div>

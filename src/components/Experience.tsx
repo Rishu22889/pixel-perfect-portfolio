@@ -3,47 +3,58 @@ import { Briefcase, GraduationCap } from 'lucide-react';
 
 const experiences = [
   {
-    type: 'work',
-    title: 'Senior Full Stack Developer',
-    organization: 'TechCorp Inc.',
-    period: '2022 - Present',
-    description: 'Leading development of enterprise SaaS products. Architecting microservices, mentoring junior developers, and implementing CI/CD pipelines.',
-    highlights: ['Led team of 5 developers', 'Reduced load time by 40%', 'Implemented automated testing'],
+    type: 'project',
+    title: 'Placement Prediction System',
+    organization: 'Machine Learning Project',
+    period: '2026',
+    description:
+      'Built an end-to-end ML web application to predict student placement outcomes using a Random Forest model. Handled data preprocessing, model training, evaluation, and deployment.',
+    highlights: [
+      'Implemented Random Forest from scikit-learn',
+      'Designed Flask-based inference API',
+      'Focused on model interpretability and clean inputs',
+    ],
   },
   {
-    type: 'work',
-    title: 'Full Stack Developer',
-    organization: 'StartupXYZ',
-    period: '2020 - 2022',
-    description: 'Built and maintained multiple web applications from scratch. Worked closely with design team to implement pixel-perfect UIs.',
-    highlights: ['Developed 3 major products', 'Integrated 10+ third-party APIs', 'Improved SEO scores by 50%'],
+    type: 'project',
+    title: 'AgentHire',
+    organization: 'AI Automation Project',
+    period: '2026',
+    description:
+      'AI-powered job application automation platform that analyzes job descriptions, matches resumes, and assists with applications.',
+    highlights: [
+      'Resume–job description matching',
+      'FastAPI backend with modular design',
+      'Scalable architecture for automation',
+    ],
   },
   {
-    type: 'work',
-    title: 'Frontend Developer',
-    organization: 'Digital Agency',
-    period: '2019 - 2020',
-    description: 'Created responsive websites and web applications for various clients. Focused on performance and accessibility.',
-    highlights: ['Delivered 20+ client projects', 'Achieved 95+ Lighthouse scores', 'Mentored 2 interns'],
+    type: 'project',
+    title: 'Email Spam Classifier',
+    organization: 'NLP Project',
+    period: '2025',
+    description:
+      'Developed a spam detection system using TF-IDF and probabilistic classifiers. Deployed as a web application for real-time predictions.',
+    highlights: [
+      'Applied TF-IDF feature extraction',
+      'Built end-to-end ML pipeline',
+      'Integrated model with web interface',
+    ],
   },
 ];
+
 
 const education = [
   {
     type: 'education',
-    title: 'M.S. Computer Science',
-    organization: 'Stanford University',
-    period: '2017 - 2019',
-    description: 'Specialized in Artificial Intelligence and Machine Learning. Research focus on natural language processing.',
-  },
-  {
-    type: 'education',
-    title: 'B.S. Computer Science',
-    organization: 'MIT',
-    period: '2013 - 2017',
-    description: 'Graduated with honors. Active member of the coding club and hackathon organizer.',
+    title: 'B.Tech, Mining Engineering',
+    organization: 'IIT ISM Dhanbad',
+    period: '2024 - 2028',
+    description:
+      'Undergraduate student with strong focus on Machine Learning, Data Structures & Algorithms, and full-stack development alongside core academics.',
   },
 ];
+
 
 export const Experience = () => {
   const { ref, isVisible } = useScrollReveal();
@@ -68,7 +79,7 @@ export const Experience = () => {
                 <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
                   <Briefcase className="text-primary" size={20} />
                 </div>
-                <h3 className="font-display font-semibold text-xl">Work Experience</h3>
+                <h3 className="font-display font-semibold text-xl">Project Experience</h3>
               </div>
               <div className="space-y-0">
                 {experiences.map((exp, index) => (
