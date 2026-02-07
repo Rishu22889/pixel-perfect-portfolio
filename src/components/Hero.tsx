@@ -100,13 +100,11 @@ export const Hero = () => {
           <div className="flex-shrink-0 animate-scale-in delay-200">
             <div className="relative">
               <div className="w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden gradient-border glow-effect">
-                <div className="class-wrapper w-full h-full bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center">
-                  <img
+                <img
                   src="/profile.jpeg"
                   alt="Risu Raj"
                   className="zoom-img w-full h-full object-cover"
                 />
-                </div>
               </div>
               <div className="absolute -bottom-4 -right-4 glass-card px-4 py-2 rounded-full animate-pulse-glow">
                 <span className="text-sm font-medium">Always learning. Always building.</span>
