@@ -1,8 +1,0 @@
-services:
-  - type: static
-    name: my-portfolio
-    staticPublishPath: ./dist
-    buildCommand: npm install && npm run build
-    envVars:
-      - key: NODE_ENV
-        value: production
