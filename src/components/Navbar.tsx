@@ -58,7 +58,7 @@ export const Navbar = () => {
           }}
           className="text-2xl font-display font-bold gradient-text"
         >
-          Portfolio
+          Risu Raj
         </a>
 
         {/* Desktop Navigation */}

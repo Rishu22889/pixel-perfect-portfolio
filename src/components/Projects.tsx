@@ -1,6 +1,12 @@
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { useState } from "react";
-import { ExternalLink, Github, Folder, MoreVertical } from "lucide-react";
+import { ExternalLink, Github, Folder, MoreVertical, X } from "lucide-react";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
 
 /* ===================== DATA ===================== */
 
@@ -152,13 +158,17 @@ const projects = [
 
 /* ===================== THREE DOT MENU ===================== */
 
-const ProjectMenu = ({ links }) => {
+const ProjectMenu = ({ links, onClick }: { links: any[]; onClick?: (e: React.MouseEvent) => void }) => {
   const [open, setOpen] = useState(false);
 
   return (
     <div className="relative">
       <button
-        onClick={() => setOpen((v) => !v)}
+        onClick={(e) => {
+          e.stopPropagation();
+          setOpen((v) => !v);
+          onClick?.(e);
+        }}
         className="p-2 rounded-full hover:bg-primary/10 transition"
         aria-label="Project links"
       >
@@ -178,6 +188,7 @@ const ProjectMenu = ({ links }) => {
                 href={link.url}
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={(e) => e.stopPropagation()}
                 className="flex items-center gap-2 px-4 py-2 text-sm hover:bg-primary/10 transition"
               >
                 <Icon size={14} />
@@ -191,13 +202,101 @@ const ProjectMenu = ({ links }) => {
   );
 };
 
+/* ===================== PROJECT MODAL ===================== */
+
+const ProjectModal = ({ project, open, onClose }: { project: any; open: boolean; onClose: () => void }) => {
+  if (!project) return null;
+
+  return (
+    <Dialog open={open} onOpenChange={onClose}>
+      <DialogContent className="max-w-3xl max-h-[90vh] overflow-y-auto">
+        <DialogHeader>
+          <DialogTitle className="text-2xl font-display gradient-text">
+            {project.title}
+          </DialogTitle>
+        </DialogHeader>
+
+        <div className="space-y-6">
+          {/* Image */}
+          {project.image && (
+            <div className="relative h-64 rounded-lg overflow-hidden">
+              <img
+                src={project.image}
+                alt={project.title}
+                className="h-full w-full object-cover"
+              />
+            </div>
+          )}
+
+          {/* Description */}
+          <div>
+            <h3 className="font-semibold text-lg mb-2">About This Project</h3>
+            <p className="text-muted-foreground leading-relaxed">
+              {project.description}
+            </p>
+          </div>
+
+          {/* Technologies */}
+          <div>
+            <h3 className="font-semibold text-lg mb-3">Technologies Used</h3>
+            <div className="flex flex-wrap gap-2">
+              {project.tech.map((tech: string) => (
+                <span
+                  key={tech}
+                  className="px-4 py-2 text-sm font-medium bg-primary/10 text-primary rounded-lg"
+                >
+                  {tech}
+                </span>
+              ))}
+            </div>
+          </div>
+
+          {/* Links */}
+          <div>
+            <h3 className="font-semibold text-lg mb-3">Project Links</h3>
+            <div className="flex flex-wrap gap-3">
+              {project.links.map((link: any) => {
+                const Icon = link.icon;
+                return (
+                  <a
+                    key={link.label}
+                    href={link.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 px-4 py-2 rounded-lg border border-primary/20 hover:bg-primary/10 transition-colors"
+                  >
+                    <Icon size={16} />
+                    <span className="text-sm font-medium">{link.label}</span>
+                  </a>
+                );
+              })}
+            </div>
+          </div>
+        </div>
+      </DialogContent>
+    </Dialog>
+  );
+};
+
 /* ===================== MAIN COMPONENT ===================== */
 
 export const Projects = () => {
   const { ref, isVisible } = useScrollReveal();
+  const [selectedProject, setSelectedProject] = useState<any>(null);
+  const [modalOpen, setModalOpen] = useState(false);
 
   const featuredProjects = projects.filter((p) => p.featured);
   const otherProjects = projects.filter((p) => !p.featured);
+
+  const handleProjectClick = (project: any) => {
+    setSelectedProject(project);
+    setModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setModalOpen(false);
+    setTimeout(() => setSelectedProject(null), 200);
+  };
 
   return (
     <section id="projects" className="py-20 md:py-32">
@@ -223,7 +322,8 @@ export const Projects = () => {
             {featuredProjects.map((project, index) => (
               <div
                 key={project.title}
-                className={`project-card group overflow-hidden transition-all duration-500 ${
+                onClick={() => handleProjectClick(project)}
+                className={`project-card group overflow-hidden transition-all duration-500 cursor-pointer ${
                   isVisible
                     ? "opacity-100 translate-y-0"
                     : "opacity-0 translate-y-10"
@@ -252,7 +352,7 @@ export const Projects = () => {
                     <h3 className="font-display font-semibold text-lg group-hover:text-primary transition-colors">
                       {project.title}
                     </h3>
-                    <ProjectMenu links={project.links} />
+                    <ProjectMenu links={project.links} onClick={(e) => e.stopPropagation()} />
                   </div>
 
                   <p className="text-muted-foreground text-sm mb-4 line-clamp-3">
@@ -283,7 +383,8 @@ export const Projects = () => {
             {otherProjects.map((project, index) => (
               <div
                 key={project.title}
-                className={`skill-card group transition-all duration-500 ${
+                onClick={() => handleProjectClick(project)}
+                className={`skill-card group transition-all duration-500 cursor-pointer ${
                   isVisible
                     ? "opacity-100 translate-y-0"
                     : "opacity-0 translate-y-10"
@@ -292,7 +393,7 @@ export const Projects = () => {
               >
                 <div className="flex items-center justify-between mb-4">
                   <Folder className="text-primary" size={32} />
-                  <ProjectMenu links={project.links} />
+                  <ProjectMenu links={project.links} onClick={(e) => e.stopPropagation()} />
                 </div>
 
                 <h4 className="font-display font-semibold mb-2 group-hover:text-primary transition-colors">
@@ -314,6 +415,13 @@ export const Projects = () => {
             ))}
           </div>
         </div>
+
+        {/* Project Modal */}
+        <ProjectModal
+          project={selectedProject}
+          open={modalOpen}
+          onClose={handleCloseModal}
+        />
       </div>
     </section>
   );
