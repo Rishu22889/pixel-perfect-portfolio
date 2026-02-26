@@ -1,120 +1,149 @@
-import { useScrollReveal } from '@/hooks/useScrollReveal';
-import { useState } from 'react';
-import {
-  ExternalLink,
-  Github,
-  Folder,
-  MoreVertical,
-} from 'lucide-react';
+import { useScrollReveal } from "@/hooks/useScrollReveal";
+import { useState } from "react";
+import { ExternalLink, Github, Folder, MoreVertical } from "lucide-react";
 
 /* ===================== DATA ===================== */
 
 const projects = [
   {
-    title: 'Placement Prediction System',
-    image: '/projects/placement.png',
+    title: "MRI Brain Tumor Detection System",
+    image: "/projects/brain_tumor.png",
     description:
-      'End-to-end machine learning web application that predicts student placement outcomes using a Random Forest model based on academic and skill-related features.',
-    tech: ['Python', 'Scikit-learn', 'Random Forest', 'Flask'],
+      "Deep learning-based MRI brain tumor classification system using ResNet-18 (transfer learning) built with PyTorch. Classifies 4 classes — Glioma, Meningioma, Pituitary Tumor, and No Tumor — and provides confidence percentage for predictions. Deployed as an interactive Streamlit web application.",
+    tech: ["Python", "PyTorch", "CNN", "ResNet-18", "Streamlit"],
     featured: true,
     links: [
       {
-        label: 'GitHub',
-        url: 'https://github.com/Rishu22889/ML/tree/main/Projects/Student_Placement',
+        label: "GitHub",
+        url: "https://github.com/Rishu22889/brain_tumor_classifier/",
         icon: Github,
-      },
-      {
-        label: 'Live Demo',
-        url: 'https://ml-dfgy.onrender.com/',
-        icon: ExternalLink,
       },
     ],
   },
   {
-    title: 'Email Spam Classifier',
-    image: '/projects/spam.png',
+    title: "AI Driver Monitoring System",
+    image: "/projects/driver_monitoring.png",
     description:
-      'Machine learning-based spam detection system using TF-IDF feature extraction and probabilistic models.',
-    tech: ['Python', 'NLP', 'Scikit-learn', 'TF-IDF'],
+      "Real-time AI-powered driver monitoring system that analyzes fatigue, distraction, and emotion using computer vision. Built with OpenCV and CNN models in PyTorch, integrated with FastAPI backend and Streamlit dashboard. Calculates dynamic risk levels using mathematical scoring logic and visualizes real-time analytics with PostgreSQL-backed data updates and live charts.",
+    tech: [
+      "Python",
+      "OpenCV",
+      "PyTorch",
+      "CNN",
+      "FastAPI",
+      "Streamlit",
+      "PostgreSQL",
+    ],
     featured: true,
     links: [
       {
-        label: 'GitHub',
-        url: 'https://github.com/Rishu22889/email_spam_classifier',
+        label: "GitHub",
+        url: "https://github.com/Rishu22889/driver_monitoring_system/",
         icon: Github,
-      },
-      {
-        label: 'Live Demo',
-        url: 'https://email-spam-classifier-7pct.onrender.com',
-        icon: ExternalLink,
       },
     ],
   },
   {
-    title: 'AgentHire',
-    image: '/projects/agenthire.png',
+    title: "AgentHire",
+    image: "/projects/agenthire.png",
     description:
-      'AI-powered job application automation platform that analyzes job descriptions, matches resumes, and assists in applying to relevant roles.',
-    tech: ['Python', 'FastAPI', 'AI APIs', 'React'],
+      "AI-powered job application automation platform that analyzes job descriptions, matches resumes, and assists in applying to relevant roles.",
+    tech: ["Python", "FastAPI", "AI APIs", "React"],
     featured: true,
     links: [
       {
-        label: 'Web App',
-        url: 'https://agenthire-ten.vercel.app',
+        label: "Web App",
+        url: "https://agenthire-ten.vercel.app",
         icon: ExternalLink,
       },
       {
-        label: 'Backend API',
-        url: 'https://agent-hire-backend.onrender.com',
+        label: "Backend API",
+        url: "https://agent-hire-backend.onrender.com",
         icon: ExternalLink,
       },
       {
-        label: 'Backend Code',
-        url: 'https://github.com/Rishu22889/agenthire-backend',
+        label: "Backend Code",
+        url: "https://github.com/Rishu22889/agenthire-backend",
         icon: Github,
       },
       {
-        label: 'Sandbox',
-        url: 'https://agent-hire-sandbox.onrender.com',
+        label: "Sandbox",
+        url: "https://agent-hire-sandbox.onrender.com",
         icon: ExternalLink,
       },
     ],
   },
   {
-    title: 'ML Models From Scratch',
+    title: "Placement Prediction System",
     description:
-      'Implemented core machine learning algorithms from scratch using NumPy to deeply understand mathematical foundations.',
-    tech: ['Python', 'NumPy', 'Linear Regression', 'Decision Trees'],
+      "End-to-end machine learning web application that predicts student placement outcomes using a Random Forest model based on academic and skill-related features.",
+    tech: ["Python", "Scikit-learn", "Random Forest", "Flask"],
     links: [
       {
-        label: 'GitHub',
-        url: 'https://github.com/Rishu22889/ML/tree/main/ML_from_Scratch',
+        label: "GitHub",
+        url: "https://github.com/Rishu22889/ML/tree/main/Projects/Student_Placement",
+        icon: Github,
+      },
+      {
+        label: "Live Demo",
+        url: "https://ml-dfgy.onrender.com/",
+        icon: ExternalLink,
+      },
+    ],
+  },
+  {
+    title: "Email Spam Classifier",
+    description:
+      "Machine learning-based spam detection system using TF-IDF feature extraction and probabilistic models.",
+    tech: ["Python", "NLP", "Scikit-learn", "TF-IDF"],
+    links: [
+      {
+        label: "GitHub",
+        url: "https://github.com/Rishu22889/email_spam_classifier",
+        icon: Github,
+      },
+      {
+        label: "Live Demo",
+        url: "https://email-spam-classifier-7pct.onrender.com",
+        icon: ExternalLink,
+      },
+    ],
+  },
+  {
+    title: "ML Models From Scratch",
+    description:
+      "Implemented core machine learning algorithms from scratch using NumPy to deeply understand mathematical foundations.",
+    tech: ["Python", "NumPy", "Linear Regression", "Decision Trees"],
+    links: [
+      {
+        label: "GitHub",
+        url: "https://github.com/Rishu22889/ML/tree/main/ML_from_Scratch",
         icon: Github,
       },
     ],
   },
   {
-    title: 'Anomaly Detection System',
+    title: "Anomaly Detection System",
     description:
-      'Unsupervised learning project to detect anomalies in structured datasets using statistical methods.',
-    tech: ['Python', 'Unsupervised ML', 'NumPy'],
+      "Unsupervised learning project to detect anomalies in structured datasets using statistical methods.",
+    tech: ["Python", "Unsupervised ML", "NumPy"],
     links: [
       {
-        label: 'GitHub',
-        url: 'https://github.com/Rishu22889/ML/tree/main/ML_from_Scratch/AnomalyDetection',
+        label: "GitHub",
+        url: "https://github.com/Rishu22889/ML/tree/main/ML_from_Scratch/AnomalyDetection",
         icon: Github,
       },
     ],
   },
   {
-    title: 'Codeforces Problem Finder',
+    title: "Codeforces Problem Finder",
     description:
-      'Web utility that helps competitive programmers discover Codeforces problems based on rating and tags.',
-    tech: ['JavaScript', 'APIs', 'Web Scraping'],
+      "Web utility that helps competitive programmers discover Codeforces problems based on rating and tags.",
+    tech: ["JavaScript", "APIs", "Web Scraping"],
     links: [
       {
-        label: 'GitHub',
-        url: 'https://github.com/Rishu22889/codeforces-problem-finder',
+        label: "GitHub",
+        url: "https://github.com/Rishu22889/codeforces-problem-finder",
         icon: Github,
       },
     ],
@@ -129,7 +158,7 @@ const ProjectMenu = ({ links }) => {
   return (
     <div className="relative">
       <button
-        onClick={() => setOpen(v => !v)}
+        onClick={() => setOpen((v) => !v)}
         className="p-2 rounded-full hover:bg-primary/10 transition"
         aria-label="Project links"
       >
@@ -141,7 +170,7 @@ const ProjectMenu = ({ links }) => {
           className="absolute right-0 mt-2 w-56 rounded-lg border bg-background shadow-lg z-50"
           onMouseLeave={() => setOpen(false)}
         >
-          {links.map(link => {
+          {links.map((link) => {
             const Icon = link.icon;
             return (
               <a
@@ -167,8 +196,8 @@ const ProjectMenu = ({ links }) => {
 export const Projects = () => {
   const { ref, isVisible } = useScrollReveal();
 
-  const featuredProjects = projects.filter(p => p.featured);
-  const otherProjects = projects.filter(p => !p.featured);
+  const featuredProjects = projects.filter((p) => p.featured);
+  const otherProjects = projects.filter((p) => !p.featured);
 
   return (
     <section id="projects" className="py-20 md:py-32">
@@ -176,9 +205,7 @@ export const Projects = () => {
         <div
           ref={ref}
           className={`transition-all duration-700 ${
-            isVisible
-              ? 'opacity-100 translate-y-0'
-              : 'opacity-0 translate-y-10'
+            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
           }`}
         >
           {/* Header */}
@@ -198,8 +225,8 @@ export const Projects = () => {
                 key={project.title}
                 className={`project-card group overflow-hidden transition-all duration-500 ${
                   isVisible
-                    ? 'opacity-100 translate-y-0'
-                    : 'opacity-0 translate-y-10'
+                    ? "opacity-100 translate-y-0"
+                    : "opacity-0 translate-y-10"
                 }`}
                 style={{ transitionDelay: `${index * 150}ms` }}
               >
@@ -233,7 +260,7 @@ export const Projects = () => {
                   </p>
 
                   <div className="flex flex-wrap gap-2">
-                    {project.tech.map(tech => (
+                    {project.tech.map((tech) => (
                       <span
                         key={tech}
                         className="px-3 py-1 text-xs font-medium bg-primary/10 text-primary rounded-full"
@@ -258,8 +285,8 @@ export const Projects = () => {
                 key={project.title}
                 className={`skill-card group transition-all duration-500 ${
                   isVisible
-                    ? 'opacity-100 translate-y-0'
-                    : 'opacity-0 translate-y-10'
+                    ? "opacity-100 translate-y-0"
+                    : "opacity-0 translate-y-10"
                 }`}
                 style={{ transitionDelay: `${450 + index * 100}ms` }}
               >
@@ -277,7 +304,7 @@ export const Projects = () => {
                 </p>
 
                 <div className="flex flex-wrap gap-2">
-                  {project.tech.slice(0, 3).map(tech => (
+                  {project.tech.slice(0, 3).map((tech) => (
                     <span key={tech} className="text-xs text-muted-foreground">
                       {tech}
                     </span>
