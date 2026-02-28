@@ -38,7 +38,7 @@ const projects = [
       "CNN",
       "FastAPI",
       "Streamlit",
-      "PostgreSQL",
+      "MobileNetV2"
     ],
     featured: true,
     links: [
