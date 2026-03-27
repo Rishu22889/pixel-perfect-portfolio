@@ -12,16 +12,26 @@ import {
 
 const projects = [
   {
-    title: "MRI Brain Tumor Detection System",
-    image: "/projects/brain_tumor.png",
+    title: "MoSPI Scraper + LLaMA-Powered RAG Chatbot",
+    image: "/projects/mospi_rag.png",
     description:
-      "Deep learning-based MRI brain tumor classification system using ResNet-18 (transfer learning) built with PyTorch. Classifies 4 classes — Glioma, Meningioma, Pituitary Tumor, and No Tumor — and provides confidence percentage for predictions. Deployed as an interactive Streamlit web application.",
-    tech: ["Python", "PyTorch", "CNN", "ResNet-18", "Streamlit"],
+      "Built an end-to-end data pipeline and RAG-based chatbot system for MoSPI publications. Implemented an incremental web scraper with SHA-256 fingerprinting to avoid duplicate ingestion, followed by ETL processing of HTML and PDFs using BeautifulSoup and pdfplumber. Developed a LLaMA 3-powered chatbot with FAISS vector search and FastAPI backend, containerized with Docker for scalable deployment.",
+    tech: [
+      "Python",
+      "FastAPI",
+      "LLaMA 3",
+      "FAISS",
+      "RAG",
+      "BeautifulSoup",
+      "pdfplumber",
+      "SQLite",
+      "Docker",
+    ],
     featured: true,
     links: [
       {
         label: "GitHub",
-        url: "https://github.com/Rishu22889/brain_tumor_classifier/",
+        url: "https://github.com/Rishu22889/mospi",
         icon: Github,
       },
     ],
@@ -45,6 +55,21 @@ const projects = [
       {
         label: "GitHub",
         url: "https://github.com/Rishu22889/driver_monitoring_system/",
+        icon: Github,
+      },
+    ],
+  },
+  {
+    title: "MRI Brain Tumor Detection System",
+    image: "/projects/brain_tumor.png",
+    description:
+      "Deep learning-based MRI brain tumor classification system using ResNet-18 (transfer learning) built with PyTorch. Classifies 4 classes — Glioma, Meningioma, Pituitary Tumor, and No Tumor — and provides confidence percentage for predictions. Deployed as an interactive Streamlit web application.",
+    tech: ["Python", "PyTorch", "CNN", "ResNet-18", "Streamlit"],
+    featured: true,
+    links: [
+      {
+        label: "GitHub",
+        url: "https://github.com/Rishu22889/brain_tumor_classifier/",
         icon: Github,
       },
     ],

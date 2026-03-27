@@ -4,41 +4,44 @@ import { Briefcase, GraduationCap } from 'lucide-react';
 const experiences = [
   {
     type: 'project',
-    title: 'Placement Prediction System',
-    organization: 'Machine Learning Project',
+    title: 'MoSPI Scraper + LLaMA-Powered RAG Chatbot',
+    organization: 'LLM + Data Engineering Project',
     period: '2026',
     description:
-      'Built an end-to-end ML web application to predict student placement outcomes using a Random Forest model. Handled data preprocessing, model training, evaluation, and deployment.',
+      'Built a production-style RAG system for querying MoSPI publications using LLaMA 3. Designed an incremental web scraping and ETL pipeline for HTML and PDF data, enabling efficient document ingestion and semantic retrieval.',
     highlights: [
-      'Implemented Random Forest from scikit-learn',
-      'Designed Flask-based inference API',
-      'Focused on model interpretability and clean inputs',
+      'Implemented incremental scraper with SHA-256 fingerprinting to prevent duplicate ingestion',
+      'Built ETL pipeline using BeautifulSoup and pdfplumber with chunking for LLM processing',
+      'Developed RAG chatbot using LLaMA 3, FAISS vector search, and FastAPI backend',
+      'Containerized full system using Docker for scalable deployment',
     ],
   },
   {
     type: 'project',
-    title: 'AgentHire',
-    organization: 'AI Automation Project',
+    title: 'AI Driver Monitoring System',
+    organization: 'Computer Vision + Real-Time System',
     period: '2026',
     description:
-      'AI-powered job application automation platform that analyzes job descriptions, matches resumes, and assists with applications.',
+      'Developed a real-time AI system to monitor driver fatigue, distraction, and emotions using deep learning and computer vision techniques.',
     highlights: [
-      'Resume–job description matching',
-      'FastAPI backend with modular design',
-      'Scalable architecture for automation',
+      'Built low-latency inference pipeline using PyTorch and OpenCV',
+      'Used MobileNetV2 for efficient real-time detection',
+      'Designed dynamic risk scoring system combining multiple model outputs',
+      'Integrated FastAPI backend with Streamlit dashboard for live analytics',
     ],
   },
   {
     type: 'project',
-    title: 'Email Spam Classifier',
-    organization: 'NLP Project',
-    period: '2025',
+    title: 'MRI Brain Tumor Detection System',
+    organization: 'Deep Learning Project',
+    period: '2026',
     description:
-      'Developed a spam detection system using TF-IDF and probabilistic classifiers. Deployed as a web application for real-time predictions.',
+      'Implemented a deep learning-based MRI classification system to detect brain tumors using transfer learning.',
     highlights: [
-      'Applied TF-IDF feature extraction',
-      'Built end-to-end ML pipeline',
-      'Integrated model with web interface',
+      'Trained ResNet-18 with transfer learning for 4-class classification',
+      'Applied data augmentation, layer freezing, and model checkpointing',
+      'Achieved high validation performance with precision/recall/F1 evaluation',
+      'Deployed as an interactive Streamlit web application',
     ],
   },
 ];
