@@ -12,6 +12,85 @@ import {
 
 const projects = [
   {
+    title: "Amazon Product Price Prediction",
+    image: "/projects/amazon.png",
+    description:
+      "End-to-end multimodal machine learning system that predicts Amazon product prices using textual, categorical, and image features from 75,000+ products. Built with Python and PyTorch, leveraging TF-IDF, EfficientNet image embeddings, and gradient boosting models with a weighted ensemble for accurate price estimation through an interactive web application.",
+    tech: [
+      "Python",
+      "PyTorch",
+      "LightGBM",
+      "CatBoost",
+      "TF-IDF",
+      "OpenCV"
+    ],
+    featured: true,
+    links: [
+      {
+        label: "GitHub",
+        url: "https://github.com/Rishu22889/amazon_ml_challenge_25",
+        icon: Github,
+      },
+      {
+        label: "Live Demo",
+        url: "https://amazon-ml-challenge-25.vercel.app",
+        icon: ExternalLink,
+      },
+      {
+        label: "Backend",
+        url: "https://amazon-price-predictor-api-309171150964.asia-south1.run.app",
+        icon: ExternalLink,
+      }
+    ],
+  },
+  {
+    title: "Grid07 – Enterprise Knowledge Graph Agent",
+    image: "/projects/grid07.png",
+    description:
+      "Enterprise search and AI agent platform that retrieves, analyzes, and answers questions over structured knowledge graphs and enterprise documents. Built using Python, FastAPI, and Neo4j with hybrid semantic search, intelligent retrieval, and an interactive web interface for efficient knowledge discovery.",
+    tech: [
+      "Python",
+      "FastAPI",
+      "Knowledge Graph",
+      "LLM",
+      "RAG",
+      "Docker"
+    ],
+    featured: true,
+    links: [
+      {
+        label: "GitHub",
+        url: "https://github.com/Rishu22889/grid07_ai",
+        icon: Github,
+      },
+      {
+        label: "Web Link",
+        url: "https://grid07ai.vercel.app",
+        icon: ExternalLink,
+      },
+    ],
+  },
+  {
+    title: "MRI Brain Tumor Detection System",
+    image: "/projects/brain_tumor.png",
+    description:
+      "Deep learning-based MRI brain tumor classification system using ResNet-18 (transfer learning) built with PyTorch. Classifies 4 classes — Glioma, Meningioma, Pituitary Tumor, and No Tumor — and provides confidence percentage for predictions. Deployed as an interactive Streamlit web application.",
+    tech: ["Python", "PyTorch", "CNN", "ResNet-18", "Streamlit"],
+    featured: true,
+    links: [
+      {
+        label: "GitHub",
+        url: "https://github.com/Rishu22889/brain_tumor_classifier/",
+        icon: Github,
+      },
+      {
+        label: "Web Link",
+        url: "https://brain-tumor-classifier-736634190695.asia-south1.run.app",
+        icon: ExternalLink,
+      },
+    ],
+  },
+  {
     title: "MoSPI Scraper + LLaMA-Powered RAG Chatbot",
     image: "/projects/mospi_rag.png",
     description:
@@ -55,21 +134,6 @@ const projects = [
       {
         label: "GitHub",
         url: "https://github.com/Rishu22889/driver_monitoring_system/",
-        icon: Github,
-      },
-    ],
-  },
-  {
-    title: "MRI Brain Tumor Detection System",
-    image: "/projects/brain_tumor.png",
-    description:
-      "Deep learning-based MRI brain tumor classification system using ResNet-18 (transfer learning) built with PyTorch. Classifies 4 classes — Glioma, Meningioma, Pituitary Tumor, and No Tumor — and provides confidence percentage for predictions. Deployed as an interactive Streamlit web application.",
-    tech: ["Python", "PyTorch", "CNN", "ResNet-18", "Streamlit"],
-    featured: true,
-    links: [
-      {
-        label: "GitHub",
-        url: "https://github.com/Rishu22889/brain_tumor_classifier/",
         icon: Github,
       },
     ],

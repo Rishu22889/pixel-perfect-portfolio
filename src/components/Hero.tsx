@@ -72,7 +72,7 @@ export const Hero = () => {
 
               {/* 🔥 DOWNLOAD RESUME BUTTON */}
               <a
-                href="https://drive.google.com/uc?export=download&id=1F4hYDMCBvQ_MpWDrLN6mOcqAbOaljRBp"
+                href="https://drive.google.com/uc?export=download&id=1LmLGt3KQ-Q66NFLP_2EhsaTYvafB8fb3"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-outline flex items-center gap-2"
