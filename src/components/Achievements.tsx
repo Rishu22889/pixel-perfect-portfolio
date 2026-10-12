@@ -7,7 +7,7 @@ const achievements = [
     title: 'Hackathon Participant',
     organization: 'AI Hackathons & Hackfest',
     description:
-      'Participated in multiple AI-focused hackathons and Hackfest events, working on real-world problem statements under time constraints.',
+      'Competed in Hackfest 2025, GSIH and the Gemma 3n Impact Challenge, working on real-world problem statements under time constraints.',
   },
   {
     icon: Award,
@@ -35,7 +35,7 @@ const achievements = [
     title: 'Competitive Programming',
     organization: 'Codeforces & LeetCode',
     description:
-      'Achieved 1200+ Codeforces rating and solved 100+ LeetCode problems, strengthening algorithmic thinking and problem-solving skills.',
+      'Pupil on Codeforces (peak rating 1222), with 300+ problems solved across LeetCode and Codeforces.',
   },
   {
     icon: Trophy,

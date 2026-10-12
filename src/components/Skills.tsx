@@ -14,6 +14,8 @@ const skillCategories = [
   {
     title: 'LLMs & Data Systems',
     skills: [
+      { name: 'Vision-Language Models (Qwen2.5-VL, PaddleOCR-VL)', level: 84 },
+      { name: 'LoRA / QLoRA Fine-Tuning', level: 83 },
       { name: 'LLaMA 3 (Ollama)', level: 80 },
       { name: 'RAG (Retrieval-Augmented Generation)', level: 82 },
       { name: 'FAISS Vector Search', level: 80 },

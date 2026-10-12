@@ -3,6 +3,31 @@ import { Briefcase, GraduationCap } from 'lucide-react';
 
 const experiences = [
   {
+    type: "work",
+    title: "Data Science Intern",
+    organization: "The Entrepreneurship Network",
+    period: "Mar 2026 – Jun 2026",
+    description:
+      "Built an end-to-end ML pipeline on 10,000+ real-world data points with Python, Pandas and NumPy.",
+    highlights: [
+      "Ran EDA and feature engineering on messy real-world data",
+      "Built predictive models that improved prediction accuracy by 18% over the baseline",
+    ],
+  },
+  {
+    type: "project",
+    title: "Remote-Sensing Image Captioning with VLMs",
+    organization: "Vision-Language Model Fine-Tuning",
+    period: "2026",
+    description:
+      "Fine-tuned Qwen2.5-VL-3B with LoRA to caption 20,264 satellite and aerial images, at 12.7 GB per GPU instead of 60 GB for full fine-tuning.",
+    highlights: [
+      "Ran 6 controlled ablations; LoRA on all 32 vision-encoder blocks gave the best model",
+      "Scaled to 2 GPUs with DDP and FP16 mixed precision for near-linear 2x throughput",
+      "BLEU-4 +14% on 1,000 held-out images, confirmed with paired bootstrap 95% CIs",
+    ],
+  },
+  {
     type: "project",
     title: "Amazon Product Price Prediction",
     organization: "Multimodal Machine Learning Project",
@@ -96,7 +121,7 @@ export const Experience = () => {
                 <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
                   <Briefcase className="text-primary" size={20} />
                 </div>
-                <h3 className="font-display font-semibold text-xl">Project Experience</h3>
+                <h3 className="font-display font-semibold text-xl">Experience & Projects</h3>
               </div>
               <div className="space-y-0">
                 {experiences.map((exp, index) => (

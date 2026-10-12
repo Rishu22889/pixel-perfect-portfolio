@@ -50,7 +50,7 @@ export const Hero = () => {
             </div>
 
             <p className="text-muted-foreground text-lg max-w-xl mx-auto lg:mx-0 mb-8 animate-fade-up delay-300">
-              Building production-ready web apps powered by clean code and practical ML.
+              Building AI systems that work outside a notebook: vision-language models, LLM pipelines and applied ML, measured on held-out data.
             </p>
 
             {/* CTA BUTTONS */}
