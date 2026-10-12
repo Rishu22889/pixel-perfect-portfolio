@@ -13,6 +13,7 @@ import {
 const projects = [
   {
     title: "Remote-Sensing Image Captioning with VLMs",
+    image: "/projects/vlm_captioning.png",
     description:
       "Fine-tuned the Qwen2.5-VL-3B vision-language model with LoRA (11.3M trainable parameters, 0.3% of the model) to caption 20,264 satellite and aerial images from VRSBench, using 12.7 GB per GPU instead of the 60 GB needed for full fine-tuning. Ran 6 controlled ablations on adapter placement, resolution, learning-rate schedule and gradient accumulation. Scaled training to 2 GPUs with PyTorch DDP and FP16 mixed precision for near-linear 2x throughput (full dataset in 136 minutes). Improved BLEU-4 by 14% and BERT-BLEU-4 from 0.669 to 0.686 on 1,000 held-out images, confirmed with paired bootstrap 95% confidence intervals; MBR decoding beat greedy and beam search.",
     tech: [
@@ -34,6 +35,7 @@ const projects = [
   },
   {
     title: "Text-Driven Object Removal & Replacement on CPU",
+    image: "/projects/object_editing.png",
     description:
       "CPU-only image-editing pipeline that removes or replaces objects from a plain-English instruction, chaining LLM parsing (Qwen2.5-0.5B, 4-bit), detection (YOLOv8n-seg, YOLO-World), segmentation (MobileSAM), inpainting (MI-GAN) and generation (Stable Diffusion 1.5). Object removal runs in 1.8 seconds with 33.5 MB of weights after benchmarking classical, GAN and diffusion inpainting. Object replacement is 5x faster (449 s to 88 s) with LCM-LoRA and TAESD. A YOLO-World fallback raised grounding accuracy from 3/10 to 8/10, and a deterministic alias layer raised object-class accuracy from 19/26 to 26/26. Packaged as a CLI and Python API with pytest tests.",
     tech: [
@@ -55,6 +57,7 @@ const projects = [
   },
   {
     title: "Receipt Reader & Expense Auto-Approval",
+    image: "/projects/receipt_reader.png",
     description:
       "Reads expense-claim receipt photos with a combined PaddleOCR-VL + Tesseract reader, then auditable rules decide approve or review with reason codes; the model never approves money on its own. Found 25 past claims (₹14,283) that policy says should have been stopped, and duplicate-bill matching on vendor + bill number found 28 re-claimed bills where image hashing found 4. Detects pen-altered totals from the bill's own arithmetic and treats prompt-injection stamps as data. On a chronological holdout: amount 95%, bill number 95%, vendor 98%, with uncertain fields left blank and sent to a person. Cut VLM inference from ~180 s to ~3 s per receipt by fixing a disabled KV cache. FastAPI service with 120 automated tests.",
     tech: [
@@ -75,6 +78,7 @@ const projects = [
   },
   {
     title: "Warranty-Fraud Review Queue",
+    image: "/projects/warranty_fraud.png",
     description:
       "Ranks warranty claims for a 40-a-month investigation desk, with a human in the loop and no automatic rejection. Validated walk-forward with a 30-day label lag: caught 37 of 59 known frauds with 40 reviews a month in historical replay. Linked a jump in small-claim fraud (0.54% to 3.23%) to an auto-approval policy change, and recommended 36 ranked + 4 random reviews so the desk also finds patterns the model misses. Optimised for precision@40 and rupee impact rather than accuracy, since a model that flags nothing scores 98.7%. Served through FastAPI.",
     tech: [
